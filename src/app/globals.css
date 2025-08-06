@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-plum disabled:pointer-events-none disabled:opacity-50 bg-brand-plum text-white h-11 px-8;
+}
+  .btn-primary:hover {
+    @apply bg-brand-plumLight;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-plum disabled:pointer-events-none disabled:opacity-50 border border-brand-plum text-brand-plum h-11 px-8 bg-white;
+  }
+  .btn-outline:hover {
+    @apply bg-brand-peachLight;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-plum to-brand-peach;
+  }
+}
+
+/* Custom animations */
+.hover-scale {
+  @apply transition-transform duration-300 hover:scale-[1.02];
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom prose styles for blog posts */
+.prose {
+  @apply text-gray-700;
+}
+.prose h2 {
+  @apply text-3xl font-bold text-gray-900 mb-4 mt-8;
+}
+.prose h3 {
+  @apply text-2xl font-bold text-gray-800 mb-3 mt-6;
+}
+.prose p {
+  @apply mb-4 leading-relaxed;
+}
+.prose ul {
+  @apply list-disc list-inside mb-4 pl-4 space-y-2;
+}
+.prose a {
+  @apply text-brand-plum font-semibold hover:underline;
+}
+.prose strong {
+  @apply font-bold text-gray-800;
+}
+.prose hr {
+  @apply my-8 border-gray-200;
+}
+.prose em {
+  @apply italic text-gray-600;
+}
+.prose img {
+  @apply rounded-xl shadow-lg my-8 w-full;
+}
+.prose .video-container {
+  @apply relative overflow-hidden w-full my-8;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+.prose .video-container iframe {
+  @apply absolute top-0 left-0 w-full h-full rounded-xl shadow-lg;
+}

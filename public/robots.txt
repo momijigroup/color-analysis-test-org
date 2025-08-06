@@ -1,0 +1,25 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://color-analysis.pro/sitemap.xml
+
+# Disallow admin and API routes
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /static/
+Disallow: /login/
+
+# Disallow legal and help pages from indexing
+Disallow: /help/
+Disallow: /help/*
+Disallow: /privacy
+Disallow: /privacy/
+Disallow: /terms
+Disallow: /terms/
+Disallow: /cookie
+Disallow: /cookie/
+Disallow: /policy
+Disallow: /policy/

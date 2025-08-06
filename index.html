@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Analysis Pro | AI-Powered Seasonal Color Analysis</title>
+    <meta name="description" content="Discover your perfect seasonal color palette with our AI-powered color analysis. Find out if you're a Spring, Summer, Autumn, or Winter and get personalized color recommendations.">
+    <meta name="keywords" content="color analysis, seasonal color analysis, what season am i, color season quiz, AI color analysis, personal color palette">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://color-analysis.pro">
+    <meta property="og:title" content="Color Analysis Pro | AI-Powered Seasonal Color Analysis">
+    <meta property="og:description" content="Discover your perfect seasonal color palette with our AI-powered color analysis. Find out if you're a Spring, Summer, Autumn, or Winter and get personalized color recommendations.">
+    <meta property="og:image" content="/lovable-uploads/og-image.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Color Analysis Pro | AI-Powered Seasonal Color Analysis">
+    <meta name="twitter:description" content="Discover your perfect seasonal color palette with our AI-powered color analysis. Find out if you're a Spring, Summer, Autumn, or Winter and get personalized color recommendations.">
+    <meta name="twitter:image" content="/lovable-uploads/og-image.png">
+    
+    <link rel="icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-plum': '#7C3A8D',
+                        'brand-plumLight': '#A259B5',
+                        'brand-peach': '#FFB6B9',
+                        'brand-peachLight': '#FFE6D1',
+                    },
+                    backgroundImage: {
+                        'hero-gradient': 'linear-gradient(135deg, #FFE6D1 0%, #FFFFFF 60%, #FFFFFF 100%)',
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-text { background: linear-gradient(to right, #7C3A8D, #FFB6B9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hover-scale { transition: transform 0.3s ease-in-out; }
+        .hover-scale:hover { transform: scale(1.02); }
+        .btn-primary { background-color: #7C3A8D; color: white; padding: 0.75rem 2rem; border-radius: 0.375rem; display: inline-flex; align-items: center; justify-content: center; font-weight: 500; transition: background-color 0.2s; }
+        .btn-primary:hover { background-color: #A259B5; }
+        .btn-outline { border: 1px solid #7C3A8D; color: #7C3A8D; background-color: white; padding: 0.75rem 2rem; border-radius: 0.375rem; display: inline-flex; align-items: center; justify-content: center; font-weight: 500; transition: background-color 0.2s; }
+        .btn-outline:hover { background-color: #FFE6D1; }
+        html { scroll-behavior: smooth; }
+        
+        /* Marquee Animation */
+        @keyframes marquee-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee { animation: marquee-scroll 24s linear infinite; will-change: transform; }
+        .marquee:hover { animation-play-state: paused; }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="/" class="flex items-center space-x-2">
+                    <img src="/lovable-uploads/logo1.png" alt="ColorMatch logo" width="64" height="64">
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="https://app.color-analysis.pro/" class="btn-outline" target="_blank" rel="noopener noreferrer">Log In</a>
+                    <a href="https://quiz.color-analysis.pro/form/view/236020?utm_source=seo&utm_medium=cpc&utm_campaign=homepage" class="btn-primary" target="_blank" rel="noopener noreferrer">Start Quiz</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative h-screen flex flex-col pt-16 pb-0 overflow-hidden" style="background: linear-gradient(135deg, #FFE6D1 0%, #FFFFFF 60%, #FFFFFF 100%);">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full opacity-10 blur-3xl" style="background-color: #7C3A8D;"></div>
+            <div class="absolute top-1/3 -left-24 w-72 h-72 rounded-full opacity-10 blur-3xl" style="background-color: #FFB6B9;"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col justify-center relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center flex-1">
+                <div class="order-2 lg:order-1">
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mt-2 mb-8">
+                        Discover Your <span class="gradient-text">Perfect Colors</span> with <span class="gradient-text">AI Color Analysis</span>
+                    </h1>
+                    <p class="text-base md:text-lg text-gray-600 max-w-lg mb-12">
+                        Our advanced AI analyzes your unique features to determine your personal color palette, 
+                        enhancing your wardrobe, makeup, and confidence.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                        <a href="https://quiz.color-analysis.pro/form/view/236020?utm_source=seo&utm_medium=cpc&utm_campaign=homepage" class="btn-primary text-lg font-medium h-12 px-8">
+                            Take the Free Quiz
+                            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                        <a href="#how-it-works" class="btn-outline">How it works</a>
+                    </div>
+                    <div class="flex items-center space-x-2 text-sm text-gray-500">
+                        <img src="/lovable-uploads/users.png" alt="User avatars" class="w-40 h-auto">
+                        <div class="flex items-center space-x-1">
+                            <span class="text-yellow-400">★★★★☆</span>
+                        </div>
+                        <span class="text-xs md:text-sm">Trusted by 355,000+ users worldwide</span>
+                    </div>
+                </div>
+                <div class="relative hidden lg:block order-1 lg:order-2">
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover-scale">
+                        <img src="/lovable-uploads/hero.png" alt="AI color analysis hero visual" class="w-full h-[500px] md:h-[625px] object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Brand Marquee -->
+        <div class="w-full overflow-x-hidden py-4">
+            <div class="marquee flex items-center gap-12 w-max">
+                <img src="/lovable-uploads/vogue.png" alt="Vogue" class="h-12 w-28 object-contain opacity-60">
+                <img src="/lovable-uploads/elle.png" alt="Elle" class="h-12 w-28 object-contain opacity-60">
+                <img src="/lovable-uploads/cosmo.png" alt="Cosmopolitan" class="h-12 w-28 object-contain opacity-60">
+                <img src="/lovable-uploads/womens.png" alt="Women's" class="h-12 w-28 object-contain opacity-60">
+                <img src="/lovable-uploads/marieclaire.png" alt="Marie Claire" class="h-12 w-28 object-contain opacity-60">
+                <img src="/lovable-uploads/allure.png" alt="Allure" class="h-12 w-28 object-contain opacity-60">
+                <!-- Duplicated for seamless loop -->
+                <img src="/lovable-uploads/vogue.png" alt="Vogue" class="h-12 w-28 object-contain opacity-60">
+                <img src="/lovable-uploads/elle.png" alt="Elle" class="h-12 w-28 object-contain opacity-60">
+                <img src="/lovable-uploads/cosmo.png" alt="Cosmopolitan" class="h-12 w-28 object-contain opacity-60">
+                <img src="/lovable-uploads/womens.png" alt="Women's" class="h-12 w-28 object-contain opacity-60">
+                <img src="/lovable-uploads/marieclaire.png" alt="Marie Claire" class="h-12 w-28 object-contain opacity-60">
+                <img src="/lovable-uploads/allure.png" alt="Allure" class="h-12 w-28 object-contain opacity-60">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20" style="background: radial-gradient(ellipse 80% 60% at 50% 0%, #FFE6D1 0%, #FFFFFF 80%);">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+                    Unlock Your <span class="gradient-text">Personal Color Profile</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Our platform blends advanced AI with expert color theory to give you the most accurate and personalized color analysis available online.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background-color: #FFE6D1; color: #7C3A8D;">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2H5z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">AI-Powered Analysis</h3>
+                    <p class="text-gray-600">Our intelligent algorithm evaluates your natural features with precision—far beyond basic quizzes.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background-color: #FFE6D1; color: #7C3A8D;">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Personalized Color Palette</h3>
+                    <p class="text-gray-600">Get a custom seasonal palette tailored to your skin tone, undertone, hair, and eye color.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background-color: #FFE6D1; color: #7C3A8D;">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Individual Recommendations</h3>
+                    <p class="text-gray-600">Receive personal suggestions for makeup, clothing, and accessories based on your best colors.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background-color: #FFE6D1; color: #7C3A8D;">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Visual Learning Tools</h3>
+                    <p class="text-gray-600">Learn how to apply your palette with interactive visuals and styling tips.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 text-white" style="background: linear-gradient(135deg, #7C3A8D 0%, #A259B5 100%);">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                Ready to Transform Your Style?
+            </h2>
+            <p class="text-xl text-white/90 max-w-2xl mx-auto mb-8">
+                Join 355,000+ people who have discovered their perfect colors and transformed their confidence with our AI-powered color analysis.
+            </p>
+            <a href="https://quiz.color-analysis.pro/form/view/236020?utm_source=seo&utm_medium=cpc&utm_campaign=homepage" 
+               class="inline-flex items-center justify-center bg-white text-purple-800 font-medium text-xl px-12 py-4 rounded-md hover:bg-gray-100 transition-colors mb-6">
+                Start Your Color Analysis
+                <svg class="ml-2 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm text-white/80 mb-8">
+                <div class="flex items-center">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path></svg>
+                    <span>355,000+ users analyzed</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-yellow-400 mr-2">★★★★★</span>
+                    <span>4.9/5 user rating</span>
+                </div>
+            </div>
+            <p class="text-sm text-white/70">
+                Free • No registration required • Results in minutes • 94% accuracy
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-5xl mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <img src="/lovable-uploads/logo1.png" alt="Color-analysis.pro logo" width="64" height="64">
+                    <p class="text-gray-400">
+                        Color-analysis.pro offers the most advanced AI-powered personal color quiz online. Discover your seasonal color palette and learn what colors suit you best—with zero guesswork.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.281C3.182 14.016 2.45 11.423 2.45 8.449c0-2.974.732-5.567 2.676-7.258.875-.791 2.026-1.281 3.323-1.281 1.297 0 2.448.49 3.323 1.281C13.716 2.882 14.448 5.475 14.448 8.449c0 2.974-.732 5.567-2.676 7.258-.875.791-2.026 1.281-3.323 1.281z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Color Analysis Quiz</a></li>
+                        <li><a href="#" class="hover:text-white">Seasonal Color Analysis</a></li>
+                        <li><a href="#" class="hover:text-white">What Season Am I</a></li>
+                        <li><a href="#" class="hover:text-white">Find Your Color Palette</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Help</a></li>
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400 text-sm">
+                <p>© 2025 Momiji Group Inc. All Rights Reserved.</p>
+                <p>2604 Whittier Place, Wilmington, DE, 19808</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Color Analysis Pro | AI-Powered Seasonal Color Analysis",
+        "description": "Discover your perfect seasonal color palette with our AI-powered color analysis. Find out if you're a Spring, Summer, Autumn, or Winter and get personalized color recommendations.",
+        "url": "https://color-analysis.pro/",
+        "inLanguage": "en",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Color Analysis Pro",
+            "url": "https://color-analysis.pro"
+        }
+    }
+    </script>
+</body>
+</html>
